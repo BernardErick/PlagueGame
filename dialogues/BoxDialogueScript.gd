@@ -6,7 +6,7 @@ var currentText = 0
 func _ready():
 	text_split = text.split('\n')
 	$TextureRect/RichTextLabel.text = text_split[0]
-	pass 
+	pass
 func _changeText():
 	currentText+=1
 	if currentText < text_split.size():

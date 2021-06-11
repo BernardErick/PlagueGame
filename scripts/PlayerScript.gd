@@ -14,15 +14,16 @@ func _physics_process(delta):
 	move_and_collide(movement)
 	animationController()
 	
-		
 func animationController():
-	if movement.x < 0:
-		$AnimatedSprite.play("walk_left")
-	if movement.x > 0:
-		$AnimatedSprite.play("walk_right")
-	if movement.y < 0:
-		$AnimatedSprite.play("walk_up")
-	if movement.y > 0:
-		$AnimatedSprite.play("walk_down")
-
+	if movement.x == 0 and movement.y == 0:
+		$AnimatedSprite.play("Idle")
+	else:
+		if movement.x < 0:
+			$AnimatedSprite.play("walk_left")
+		if movement.x > 0:
+			$AnimatedSprite.play("walk_right")
+		if movement.y < 0:
+			$AnimatedSprite.play("walk_up")
+		if movement.y > 0:
+			$AnimatedSprite.play("walk_down")
 
