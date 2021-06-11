@@ -14,7 +14,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-text = "Ola\\Mundo"
+text = "Ainda assim, existem dúvidas a respeito de como a valorização de fatores subjetivos pode nos levar a considerar a reestruturação do impacto na agilidade decisória."
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -48,4 +48,5 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
