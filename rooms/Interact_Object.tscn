@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://rooms/interact_button_input.png" type="Texture" id=1]
+[ext_resource path="res://rooms/Interact_Object_Script.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 413.846, 377.618 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "interact"
+loop = true
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Press_Button:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.333333, 0.666667, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -97.1771, -374.856 ), Vector2( -97.1771, -289.426 ), Vector2( -97.1771, -374.856 ) ]
+}
+
+[node name="Interact_Object" type="Node2D"]
+position = Vector2( 444.063, 412.95 )
+script = ExtResource( 2 )
+
+[node name="Press_Button" type="TextureRect" parent="."]
+margin_left = -97.1771
+margin_top = -374.856
+margin_right = 102.823
+margin_bottom = -174.856
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "interact"
+anims/interact = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

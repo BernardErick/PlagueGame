@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://rooms/imgs/room1.png" type="Texture" id=1]
+[ext_resource path="res://rooms/room_player/Player_Room.tscn" type="PackedScene" id=2]
+[ext_resource path="res://rooms/Interact_Object.tscn" type="PackedScene" id=3]
+[ext_resource path="res://rooms/room_npcs/Npc1/Npc1_Room.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 516.576, 37.0224 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 292.895, 37.0224 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 280.895, 37.0224 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Node2D
+
+var player_entered = false
+
+func _on_Area2D_body_entered(body):
+	if body.name == \"Player_Room\":
+		self.visible = true
+	pass
+
+func _on_Area2D_body_exited(body):
+	if body.name == \"Player_Room\":
+		self.visible = false
+	pass
+"
+
+[node name="Room1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1026.0
+margin_bottom = 602.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 511.376, 566.612 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 38.3462, 292.123 )
+rotation = 1.5708
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 991.343, 281.621 )
+rotation = 1.5708
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Player_Room" parent="." instance=ExtResource( 2 )]
+position = Vector2( 849.699, 451.485 )
+
+[node name="Npc1_Room" parent="." instance=ExtResource( 4 )]
+position = Vector2( 186.569, 461.824 )
+text_to_dialog = "res://dialogues/texts/npc1_dialog1.txt"
+
+[node name="Interact_Object" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 187.354, 416.877 )
+scale = Vector2( 0.45, 0.45 )
+
+[node name="Interact_Object2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 913.507, 352.805 )
+scale = Vector2( 0.45, 0.45 )
+script = SubResource( 4 )
