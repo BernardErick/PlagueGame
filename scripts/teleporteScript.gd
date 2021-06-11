@@ -1,7 +1,6 @@
 extends Area2D
 var playerEntered = false
 export var rota:String 
-
 func _process(delta):
 	if Input.is_action_pressed("interact") and playerEntered:
 		get_tree().change_scene(rota)
@@ -17,3 +16,4 @@ func _on_teleporte_body_exited(body):
 	if body.name == "Player":
 		playerEntered = false
 		print("Saiu")
+		

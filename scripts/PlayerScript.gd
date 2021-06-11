@@ -13,6 +13,7 @@ func _physics_process(delta):
 	
 	move_and_collide(movement)
 	animationController()
+	
 		
 func animationController():
 	if movement.x < 0:

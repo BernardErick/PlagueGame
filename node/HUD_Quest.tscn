@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/book/book7.tres" type="Texture" id=9]
 [ext_resource path="res://assets/book/book8.tres" type="Texture" id=10]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": false,
@@ -32,7 +32,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 135.197, 330.217 )
 scale = Vector2( 0.522465, 0.446632 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "opening"
 frame = 7
 
