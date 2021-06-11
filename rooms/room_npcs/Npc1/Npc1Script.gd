@@ -25,11 +25,11 @@ func loadFile()-> String:
 	file.close()
 	return content
 func _on_Area2D_body_entered(body):
-	if body.name == "Player_Room":
+	if body.name == "Player":
 		player_entered = true
 	pass # Replace with function body.
 
 func _on_Area2D_body_exited(body):
-	if body.name == "Player_Room":
+	if body.name == "Player":
 		player_entered = false
 	pass # Replace with function body.
