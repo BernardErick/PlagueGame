@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DeadGrass.png-ff9d034ceaf01298761a9bea27ebea00.stex"
+path="res://.import/quest.png-5b0ffad4f1a9a17ac220a7298f9deeeb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/maps/MiniWorldSprites/Ground/DeadGrass.png"
-dest_files=[ "res://.import/DeadGrass.png-ff9d034ceaf01298761a9bea27ebea00.stex" ]
+source_file="res://assets/images/quest.png"
+dest_files=[ "res://.import/quest.png-5b0ffad4f1a9a17ac220a7298f9deeeb.stex" ]
 
 [params]
 
@@ -27,7 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
-process/invert_color=true
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

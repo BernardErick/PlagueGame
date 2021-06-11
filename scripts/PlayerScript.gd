@@ -12,6 +12,16 @@ func _physics_process(delta):
 	movement.y = speed_walk * vertical_axis * delta
 	
 	move_and_collide(movement)
-
+	animationController()
+		
+func animationController():
+	if movement.x < 0:
+		$AnimatedSprite.play("walk_left")
+	if movement.x > 0:
+		$AnimatedSprite.play("walk_right")
+	if movement.y < 0:
+		$AnimatedSprite.play("walk_up")
+	if movement.y > 0:
+		$AnimatedSprite.play("walk_down")
 
 

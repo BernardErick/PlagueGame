@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/day&nightScript.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "day&night"
+length = 300.0
+loop = true
+step = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.07697, 3.62255, 145, 150, 250, 300 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.262287, 0.227243, 0.287759, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.698039, 0.564706, 0.47451, 1 ), Color( 0.262287, 0.227243, 0.287759, 1 ), Color( 0.176471, 0.160784, 0.25098, 1 ) ]
+}
+
+[node name="CanvasModulate" type="CanvasModulate"]
+position = Vector2( 0, -1 )
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/day&night = SubResource( 1 )
