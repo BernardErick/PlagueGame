@@ -43,10 +43,3 @@ func _process(delta):
 	#	$textQuest.text = mission3 + str(GlobalMissionScript.skeletonsKilled) + "/" + str(mission3Limit)
 	#if GlobalMissionScript.skeletonsKilled == mission3Limit:
 	#	emit_signal("boss")
-		
-
-
-
-	
-	
-	
